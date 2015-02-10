@@ -22,7 +22,6 @@ import android.widget.Toast;
 public class Principal extends Activity{
 
     private final String BOTON_PLAY = "botonPlay";
-    private TextView tv;
     private ListView lv;
     private Cursor cursor;
     private GestorAudio gv;
@@ -41,7 +40,7 @@ public class Principal extends Activity{
         botonera = (LinearLayout)findViewById(R.id.botonera);
         lv = (ListView) findViewById(R.id.lista);
         gv = new GestorAudio(this);
-        cargarLista(null);
+        cursor = gv.getCursor();
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -118,15 +117,6 @@ public class Principal extends Activity{
         startService(intent);
         btPlay.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_play));
         btPlay.setTag("play");
-    }
-
-    public void cargarLista(String orden){
-        if(orden == null)
-            cursor = gv.getCursor();
-        else
-            cursor = gv.getCursor(orden);
-        ad = new Adaptador(this, cursor);
-        lv.setAdapter(ad);
     }
 
     public void tostada(String mensaje){
