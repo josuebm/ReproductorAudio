@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout"
+        android:visibility="visible">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lista"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="8"
+            android:id="@+id/botonera"
+            android:visibility="gone">
+
+            <ImageButton
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/btAnterior"
+                android:layout_weight="1"
+                android:src="@drawable/ic_action_previous"
+                android:onClick="anterior"
+                android:background="#7ec1ff91" />
+
+            <ImageButton
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/btPlay"
+                android:layout_weight="1"
+                android:src="@drawable/ic_action_play"
+                android:onClick="reproducir"
+                android:tag="play"
+                android:background="#7ec1ff91" />
+
+            <ImageButton
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/btSiguiente"
+                android:layout_weight="1"
+                android:src="@drawable/ic_action_next"
+                android:onClick="siguiente"
+                android:background="#7ec1ff91" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
